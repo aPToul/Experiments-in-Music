@@ -30,6 +30,9 @@ I modified the character generation step in two ways:
 
 - May help to read this: http://www.lesession.co.uk/abc/abc_notation.htm
 - To convert ABC to MIDI: use abc2midi for conversion and timidity for playing
-install: $ sudo apt-get install abcmidi timidity
+
+install (linux): $ sudo apt-get install abcmidi timidity
+
 convert: $ abc2midi music.abc -o music.mid 
+
 play: $ timidity music.mid
