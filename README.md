@@ -13,5 +13,9 @@ Raw data: http://abc.sourceforge.net/NMD/nmd/jigs.txt
 
 # Sampling
 I modified the character generation step in two ways:
-- Forcing the model to continue writing a song without the new song character '%'
-- Iterating back and forth between two models (128 nodes & 256 nodes respectively), the smaller one which is "creative" and the bigger one potentially overfit (hence it is not allowed to write too many characters in a row, but it is really good at injecting parts from other tunes coherently)
+
+1. Forcing the model to continue writing a song without the new song character '%'
+
+2. Iterating back and forth between two models (128 nodes & 256 nodes respectively)
+- The smaller one is "creative" but struggles to write long passages
+- The bigger one is overfit to the data and thus is limited from writing too many characters in a row. It is very good at borrowing parts from other tunes coherently.
