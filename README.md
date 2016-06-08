@@ -19,3 +19,17 @@ I modified the character generation step in two ways:
 2. Iterating back and forth between two models (128 nodes & 256 nodes respectively)
 - The smaller one is "creative" but struggles to write long passages
 - The bigger one is overfit to the data and thus is limited from writing too many characters in a row. It is very good at borrowing parts from other tunes coherently.
+
+
+# Similar Projects
+
+- https://maraoz.com/2016/02/02/abc-rnn/
+- http://yoavz.com/music_rnn/
+
+# ABC Notation
+
+- May help to read this: http://www.lesession.co.uk/abc/abc_notation.htm
+- To convert ABC to MIDI: use abc2midi for conversion and timidity for playing
+install: $ sudo apt-get install abcmidi timidity
+convert: $ abc2midi music.abc -o music.mid 
+play: $ timidity music.mid
