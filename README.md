@@ -16,7 +16,7 @@ I modified the character generation step in two ways:
 
 1. Forcing the model to continue writing a song without the new song character '%'
 
-2. Iterating back and forth between two models (128 nodes & 256 nodes respectively)
+2. Iterating back and forth between two models (256 nodes & 512 nodes respectively)
  
 The smaller one is "creative" but struggles to write long passages
 
