@@ -1,31 +1,36 @@
 # Experiments-in-Music
 An exploration in machine-assisted musical composition.
 
-# Installation
-See using Character RNN model implemented in Tensor Flow from https://github.com/sherjilozair/char-rnn-tensorflow
+
+# Installation and Usage
+This project uses the Character RNN model implemented in Tensor Flow by Sherjil Ozair: https://github.com/sherjilozair/char-rnn-tensorflow
 
 
 # Dataset
-All jigs in D minor from The Nottingham Collection, with basic data cleaning. Songs begin with a %.
+The Nottingham Collection: http://abc.sourceforge.net/NMD/nmd/jigs.txt
 
-Raw data (unclean): http://abc.sourceforge.net/NMD/nmd/jigs.txt
+Please see the ABC Notation section below for more information.
 
+# Pre-processing
 
-# Sampling
+I chose to focus only on Jigs that are in D minor to make it easier to train the network. 
+
+The code assumes a new song begins with the character '%', which can be achieved easily from the raw data by replacing "X: #".
+
+# Sampling During Generation
 I modified the character generation step in two ways:
 
-1. Forcing the model to continue writing a song without the new song character '%'
+1. Forcing the model to continue writing a song without the new song character defined by me to be '%'
 
 2. Iterating back and forth between two models (256 nodes & 512 nodes respectively)
  
 The smaller one is "creative" but struggles to write long passages.
-
-The bigger one is overfit to the data and thus is limited from writing too many characters in a row. It is very good at borrowing parts from other tunes coherently.
+The bigger one is very good at borrowing concepts from tunes coherently, thus preserving musical structure.
 
 
 # Similar Projects
 
-- Equivalent project: https://maraoz.com/2016/02/02/abc-rnn/
+- Equivalent dataset: https://maraoz.com/2016/02/02/abc-rnn/
 - Interesting blog on machine-assisted composition: https://highnoongmt.wordpress.com/2015/08/15/deep-learning-for-assisting-the-process-of-music-composition-part-4/
 - Another implementation: http://yoavz.com/music_rnn/
 
